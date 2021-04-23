@@ -9,15 +9,21 @@ export class ToDoListComponent {
   lista = [];  
   
   agregarTarea (laTarea) { 
+    if (laTarea.value === '') { 
+      console.log("no hay tarea para agregar...")
+      return
+    }
     this.lista.push ({
       descripcion : laTarea.value, 
       estado : false
     }); 
     console.log("agrego una tarea a la lista... "); 
-    console.log(this.lista)
+    laTarea.value = '';
+    console.log(this.lista) 
   } 
 
-  quitarTarea () { 
+  quitarTarea (posicion) { 
+    this.lista.splice(posicion, 1); 
     console.log("quito la tarea... "); 
   } 
 
