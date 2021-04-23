@@ -1,1 +1,15 @@
 <p>to-do-list works!</p>
+
+<div>
+    <input type="text" #laNuevaTarea > 
+    <br> 
+    <button (click)="agregarTarea(laNuevaTarea)">Agregar</button>
+</div>
+
+<div id="laLista" > 
+    <div id="unaTarea" *ngFor="let item of lista">
+        <input type="checkbox"> 
+        <p>{{item.descripcion}}</p> 
+        <button (click)="quitarTarea()">Quitar</button>
+    </div>
+</div>
