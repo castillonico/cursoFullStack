@@ -1,0 +1,10 @@
+<p>un-contador works!</p> 
+
+<div>
+    <h4>Configurar Contador: </h4> 
+    <app-contador (resultado)="asignarInicio($event)"></app-contador> 
+    <app-contador (resultado)="asignarVariacion($event)"></app-contador>
+    <button (click)="configurarContador()">Configurar</button>
+</div>
+
+<app-contador [cuenta]=nuevoInicio [diferencial]=nuevoVariacion></app-contador>
