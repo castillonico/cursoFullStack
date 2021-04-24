@@ -7,9 +7,9 @@
 </div>
 
 <div id="laLista" > 
-    <div id="unaTarea" *ngFor="let item of lista, index as i">
-        <input type="checkbox"> 
-        <p>{{item.descripcion}}</p> 
+    <div id="unaTarea" *ngFor="let item of lista, index as i" >
+        <button (click)="tareaCompleta(i)">OK</button>
+        <p [ngClass]="{completada: item.estado}">{{item.descripcion}}</p> 
         <button (click)="quitarTarea(i)">Quitar</button>
     </div>
-</div>
+</div> 

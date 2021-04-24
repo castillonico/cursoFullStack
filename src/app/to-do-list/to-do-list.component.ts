@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent { 
-  lista = [];  
+  lista = []; 
   
   agregarTarea (laTarea) { 
     if (laTarea.value === '') { 
@@ -26,7 +26,9 @@ export class ToDoListComponent {
     this.lista.splice(posicion, 1); 
     console.log("quito la tarea... "); 
   } 
-
+  tareaCompleta (i) { 
+    this.lista[i].estado = !this.lista[i].estado; 
+  }
 
 
 
