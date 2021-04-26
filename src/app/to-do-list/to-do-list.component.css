@@ -1,3 +1,42 @@
 .completada {
-    color: red;
+    color: grey; 
+    background-color: rgb(241, 241, 241);
+} 
+* { 
+    align-items: center; 
+    margin: 10px; 
+    padding: 10px;
 }
+#ingresoDeTarea { 
+    width: 500px; 
+    height: 30px;
+    display: flex; 
+    background-color: rgb(233, 233, 233); 
+    border-radius: 5px; 
+    align-items: center; 
+    text-align: center;
+} 
+    #ingresoDeTarea input { 
+        width: 450px; 
+        border-radius: 2px; 
+        padding: 5 10px 5 10px; 
+        margin: 5 10px 5 10px;
+    }
+    #ingresoDeTarea button { 
+        padding: 5 10px 5 10px; 
+        margin: 5 10px 5 10px;
+    } 
+
+#laLista {
+    display: flex; 
+    width: 500px; 
+    flex-direction: column-reverse;
+} 
+    #laLista div {
+        display: flex; 
+        width: 450px; 
+    } 
+    #laLista div p { 
+        width: 300px; 
+        text-align: center;
+    }

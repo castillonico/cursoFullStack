@@ -1,7 +1,7 @@
 <p>to-do-list works!</p>
 
-<div>
-    <input type="text" #laNuevaTarea > 
+<div id="ingresoDeTarea">
+    <input (keyup.enter)="agregarTarea(laNuevaTarea)" type="text" #laNuevaTarea  > 
     <br> 
     <button (click)="agregarTarea(laNuevaTarea)">Agregar</button>
 </div>
