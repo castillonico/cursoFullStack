@@ -1,1 +1,20 @@
 <p>crear-grupo works!</p>
+<div>
+    <input type="text" #grupoIngresado> Nombre del Grupo 
+</div> 
+
+<div #ingresados> 
+    <div>
+        <button (click)="agregarAlumno()"> Agregar --> </button> <br>
+        <button (click)="quitarAlumno()"> <-- Quitar </button>
+    </div> 
+    <div>
+        <label *ngFor="let item of listaParaGrupo">
+            <h4>{{item.first_name}}</h4> 
+            <h6>{{item.last_name}}</h6>
+        </label> 
+        <br>
+        <button (click)="limpiarGrupo()"> Resetear </button> 
+        <button (click)="guardarGrupo()"> Guardar </button>
+    </div>
+</div>

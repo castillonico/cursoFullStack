@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GruposComponent implements OnInit {
 
-  constructor() { }
+  losGrupos = []; 
+  grupo: {
+    nombre: string, 
+    cantidadAlumnos, 
+  }; 
+
+  quitarGrupo () { 
+
+  }; 
+  mostrarGrupo () {
+
+  }; 
+  constructor() { }; 
 
   ngOnInit(): void {
-  }
+  }; 
 
 }

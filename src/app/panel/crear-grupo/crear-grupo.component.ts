@@ -7,6 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearGrupoComponent implements OnInit {
 
+  listaParaGrupo = []; 
+  
+  agregarAlumno () {
+
+  }; 
+  quitarAlumno () { 
+
+  }; 
+
+  limpiarGrupo () { 
+
+  }; 
+  guardarGrupo () { 
+
+  }; 
+  
   constructor() { }
 
   ngOnInit(): void {
