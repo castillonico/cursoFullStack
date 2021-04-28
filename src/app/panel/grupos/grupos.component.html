@@ -1,7 +1,7 @@
 <p>grupos works!</p>
 <div *ngFor="let item of losGrupos"(click)="mostrarGrupo()">
     <h2>{{grupo.nombre}}</h2> 
-    <h5>Cantidad Alumnos: {{grupo.cantidadAlumnos}}</h5>
+    <h5>Cantidad Alumnos: {{grupo.length}}</h5>
     <br>
     <button (click)="quitarGrupo()"> Eliminar </button>
 </div>

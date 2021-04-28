@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-grupos',
@@ -6,12 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grupos.component.css']
 })
 export class GruposComponent implements OnInit {
-
-  losGrupos = []; 
-  grupo: {
-    nombre: string, 
-    cantidadAlumnos, 
-  }; 
+  losGrupos = [];
+  @Input () grupo: {nombre, alumnos }; 
 
   quitarGrupo () { 
 

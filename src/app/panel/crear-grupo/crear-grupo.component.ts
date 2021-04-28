@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-crear-grupo',
@@ -7,20 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearGrupoComponent implements OnInit {
 
-  listaParaGrupo = []; 
+  @Input () listaParaGrupo = []; 
+  @Output () elListado = new EventEmitter(); 
+  listaDeGrupo = []; 
   
   agregarAlumno () {
-
+    console.log(this.listaParaGrupo); 
+    this.listaDeGrupo.push(this.listaParaGrupo); 
   }; 
   quitarAlumno () { 
-
   }; 
 
   limpiarGrupo () { 
-
   }; 
-  guardarGrupo () { 
-
+  
+  guardarGrupo (elEvento) { 
+    elEvento = this.elListado.emit(this.listaDeGrupo); 
+    console.log(this.listaDeGrupo); 
   }; 
   
   constructor() { }
