@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GruposComponent implements OnInit {
   losGrupos = [];
-  @Input () grupo: {nombre, alumnos }; 
+  @Input () grupo; 
 
   quitarGrupo () { 
 

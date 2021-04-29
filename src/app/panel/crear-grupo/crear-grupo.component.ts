@@ -21,9 +21,8 @@ export class CrearGrupoComponent implements OnInit {
   limpiarGrupo () { 
   }; 
   
-  guardarGrupo (elEvento) { 
-    elEvento = this.elListado.emit(this.listaDeGrupo); 
-    console.log(this.listaDeGrupo); 
+  guardarGrupo () { 
+    this.elListado.emit(this.listaDeGrupo); 
   }; 
   
   constructor() { }

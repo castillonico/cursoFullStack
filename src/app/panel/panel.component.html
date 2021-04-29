@@ -1,7 +1,7 @@
 <p>panel works!</p>
 
-<app-lista-alumnos></app-lista-alumnos> 
+<app-lista-alumnos (agregarAGrupo)="sumarAlumnosALista($event)"></app-lista-alumnos> 
 
-<app-crear-grupo [listaParaGrupo] = "['uno','dos','tres']"></app-crear-grupo> 
+<app-crear-grupo [listaParaGrupo]="listaPrevia" (elListado)=guardarGrupo($event)></app-crear-grupo> 
 
-<app-grupos [grupo]= "'primero'" ></app-grupos>
+<app-grupos [grupo]="manejoAlumnos"></app-grupos>
