@@ -1,0 +1,17 @@
+div {
+    margin: 10px; 
+    padding: 10px; 
+    background-color: #bad9d7; 
+    border-radius: 10px; 
+} 
+div div { 
+    background-color: #f1edea; 
+} 
+button { 
+    width: 200px;
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    background-color: white; 
+    margin: 10px;
+}

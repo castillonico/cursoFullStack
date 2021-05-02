@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap'); 
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
 app-panel {
     display: flex; 
     text-align: center; 
-    align-items: center;
-}
+    align-items: top;
+} 

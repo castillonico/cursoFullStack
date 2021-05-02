@@ -12,8 +12,8 @@ export class GruposComponent implements OnInit {
   
   @Input () grupo; 
   
-  quitarGrupo () { 
-    this.losGrupos.splice(this.losGrupos[this.losGrupos.length]); 
+  quitarGrupo (i) { 
+    this.losGrupos.splice(i, 1); 
   }; 
   mostrarGrupo () {
     this.losGrupos= this.MovimientoAlumnosService.grupoGenerado; 

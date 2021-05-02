@@ -1,6 +1,6 @@
-<p>crear-grupo works!</p>
 <div>
-    <input type="text" #grupoIngresado> Nombre del Grupo 
+    <p>Ingresar Nombre Grupo: </p>
+    <input type="text" #grupoIngresado>
 </div> 
 
 <div #ingresados> 
@@ -9,7 +9,7 @@
         <button (click)="quitarAlumno()"> <-- Quitar </button>
     </div> 
     <div>
-        <label *ngFor="let item of listaParaGrupo">
+        <label *ngFor="let item of listaParaGrupo, index as i">
             <h4>{{item.first_name}}</h4> 
             <h6>{{item.last_name}}</h6>
         </label> 

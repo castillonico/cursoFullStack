@@ -8,24 +8,27 @@ import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.se
 })
 export class CrearGrupoComponent implements OnInit {
 
-  @Input () listaParaGrupo = []; 
-  @Output () elListado = new EventEmitter(); 
-  listaDeGrupo = []; 
+  listaParaGrupo = [];
   
-  agregarAlumno () {
-    this.listaParaGrupo = this.MovimientoAlumnosService.seleccionados; 
-    console.log (this.listaParaGrupo); 
+  agregarAlumno () { 
+      this.listaParaGrupo = this.MovimientoAlumnosService.seleccionados; 
+      this.MovimientoAlumnosService.seleccionados = []; 
+      console.log (this.listaParaGrupo); 
   }; 
+  
   quitarAlumno () { 
-    this.listaParaGrupo.splice(this.listaParaGrupo[length-1]); 
+    this.listaParaGrupo.splice(this.listaParaGrupo.length, 1); 
+    this.MovimientoAlumnosService.seleccionados = this.listaParaGrupo; 
   }; 
 
   limpiarGrupo () { 
     this.listaParaGrupo = [];  
+    this.MovimientoAlumnosService.seleccionados = this.listaParaGrupo; 
   }; 
   
   guardarGrupo (elNuevoGrupo) { 
      this.MovimientoAlumnosService.grupoGenerado.push(elNuevoGrupo); 
+     this.listaParaGrupo = []; 
   }; 
   
   constructor ( public MovimientoAlumnosService: MovimientoAlumnosService ) { }
