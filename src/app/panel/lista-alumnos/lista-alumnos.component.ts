@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'; 
+import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.service';
 import { alumnado } from "src/assets/bbddAlumnos";
 
 @Component({
@@ -7,19 +8,13 @@ import { alumnado } from "src/assets/bbddAlumnos";
   styleUrls: ['./lista-alumnos.component.css'] 
 }) 
 export class ListaAlumnosComponent { 
+  constructor ( public MovimientoAlumnosService: MovimientoAlumnosService) {}; 
 
   alumnos = alumnado; 
-  arregloAuxiliar = ["uno","dos","tres","cuatro","cinco","seis","siete"]; 
-  arregloParaImprimir: [string]; 
-  alumnosSeleccionados: [{"id"?:number,"first_name"?:string,"last_name"?:string,"email"?:string,"avatar"?:string}]; 
-  
   @Output() agregarAGrupo = new EventEmitter(); 
 
-  seleccionado (posicion) { 
-    console.log(this.alumnos[posicion]); 
-    this.alumnosSeleccionados.push(this.alumnos[posicion]); 
-    console.log(this.alumnosSeleccionados); 
+  seleccionado (index) { 
+    this.MovimientoAlumnosService.seleccionados.push(this.alumnos[index]); 
   } 
   
-
-}
+} 

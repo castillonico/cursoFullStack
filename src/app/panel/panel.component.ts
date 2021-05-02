@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent { 
-  listaPrevia; 
+  listaPrevia: []; 
   manejoAlumnos; 
 
   guardarGrupo (elGrupo) { 
     this.manejoAlumnos = elGrupo; 
   } 
   sumarAlumnosALista (lista) { 
-    this.listaPrevia.push(lista); 
+    this.listaPrevia = lista; 
   } 
 
 }

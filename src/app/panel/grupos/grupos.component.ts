@@ -1,21 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.service';
 
 @Component({
   selector: 'app-grupos',
   templateUrl: './grupos.component.html',
   styleUrls: ['./grupos.component.css']
 })
-export class GruposComponent implements OnInit {
-  losGrupos = [];
+export class GruposComponent implements OnInit { 
+
+  losGrupos: Array<any> = []; 
+  
   @Input () grupo; 
-
+  
   quitarGrupo () { 
-
+    this.losGrupos.splice(this.losGrupos[this.losGrupos.length]); 
   }; 
   mostrarGrupo () {
-
+    this.losGrupos= this.MovimientoAlumnosService.grupoGenerado; 
+    console.log(this.losGrupos);
   }; 
-  constructor() { }; 
+
+  constructor( public MovimientoAlumnosService: MovimientoAlumnosService ) { }; 
 
   ngOnInit(): void {
   }; 

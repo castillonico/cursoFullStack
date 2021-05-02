@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.service';
 
 @Component({
   selector: 'app-crear-grupo',
@@ -12,20 +13,23 @@ export class CrearGrupoComponent implements OnInit {
   listaDeGrupo = []; 
   
   agregarAlumno () {
-    console.log(this.listaParaGrupo); 
-    this.listaDeGrupo.push(this.listaParaGrupo); 
+    this.listaParaGrupo = this.MovimientoAlumnosService.seleccionados; 
+    console.log (this.listaParaGrupo); 
   }; 
   quitarAlumno () { 
+    this.listaParaGrupo.splice(this.listaParaGrupo[length-1]); 
   }; 
 
   limpiarGrupo () { 
+    this.listaParaGrupo = [];  
   }; 
   
-  guardarGrupo () { 
-    this.elListado.emit(this.listaDeGrupo); 
+  guardarGrupo (elNuevoGrupo) { 
+     this.MovimientoAlumnosService.grupoGenerado.push(elNuevoGrupo); 
   }; 
   
-  constructor() { }
+  constructor ( public MovimientoAlumnosService: MovimientoAlumnosService ) { }
+
 
   ngOnInit(): void {
   }

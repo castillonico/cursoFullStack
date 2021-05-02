@@ -1,7 +1,8 @@
 <p>grupos works!</p>
-<div *ngFor="let item of losGrupos"(click)="mostrarGrupo()">
-    <h2>{{grupo.nombre}}</h2> 
-    <h5>Cantidad Alumnos: {{grupo.length}}</h5>
+<button (click)="mostrarGrupo()" > Mostrar Grupos </button>
+<div *ngFor="let item of losGrupos, index as i">
+    <h2>{{losGrupos[i].nombre}}</h2> 
+    <h5>Cantidad Alumnos: {{losGrupos[i].length}}</h5>
     <br>
     <button (click)="quitarGrupo()"> Eliminar </button>
 </div>
