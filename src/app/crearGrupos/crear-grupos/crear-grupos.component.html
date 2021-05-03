@@ -1,0 +1,14 @@
+<h3>Nombre de Grupo: </h3> 
+<input #nombreGrupo> 
+
+<h4>Lista Previa de Alumnos: </h4>
+<div>
+    <ul>
+        <li *ngFor="let item of vistaPreviaGrupo, index as i" (click)="quitarAlumno(i)">
+            <h3>{{item.firs_name}} </h3> 
+            <h4>{{item.last_name}}</h4>
+            <p> Click para Quitar </p>
+        </li>
+    </ul>
+    <button (click)="guardarGrupo()"> Guardar Grupo </button>
+</div>

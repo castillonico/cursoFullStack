@@ -1,0 +1,7 @@
+
+<div>
+    <div *ngFor="let item of listaAlumnos, index as i" (click)="alumnoParaAgregar(i)">
+        <h3>{{item.first_name}}</h3> 
+        <h2>{{item.last_name}}</h2>
+    </div>
+</div>
