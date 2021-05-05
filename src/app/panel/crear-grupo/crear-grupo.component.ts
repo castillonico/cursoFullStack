@@ -11,24 +11,27 @@ export class CrearGrupoComponent implements OnInit {
   listaParaGrupo = [];
   
   agregarAlumno () { 
-      this.listaParaGrupo = this.MovimientoAlumnosService.seleccionados; 
-      this.MovimientoAlumnosService.seleccionados = []; 
+      this.listaParaGrupo = this.MovimientoAlumnosService.mostrarLosSeleccionados(); 
       console.log (this.listaParaGrupo); 
   }; 
   
-  quitarAlumno () { 
-    this.listaParaGrupo.splice(this.listaParaGrupo.length, 1); 
-    this.MovimientoAlumnosService.seleccionados = this.listaParaGrupo; 
+  quitarAlumno (i) { 
+    this.listaParaGrupo = this.MovimientoAlumnosService.quitarUnAlumno(i); 
   }; 
 
   limpiarGrupo () { 
     this.listaParaGrupo = [];  
-    this.MovimientoAlumnosService.seleccionados = this.listaParaGrupo; 
+    this.MovimientoAlumnosService.limpiarSeleccionados(); 
   }; 
   
   guardarGrupo (elNuevoGrupo) { 
-     this.MovimientoAlumnosService.grupoGenerado.push(elNuevoGrupo); 
-     this.listaParaGrupo = []; 
+    if (elNuevoGrupo === []) { 
+      console.log("no hay alumnos para agregar un grupo..."); 
+      return;
+    } else {
+      this.MovimientoAlumnosService.guardarndoElNuevoGrupo(elNuevoGrupo); 
+      this.listaParaGrupo = [];
+    } 
   }; 
   
   constructor ( public MovimientoAlumnosService: MovimientoAlumnosService ) { }

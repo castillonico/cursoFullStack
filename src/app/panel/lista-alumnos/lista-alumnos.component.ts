@@ -12,7 +12,7 @@ export class ListaAlumnosComponent {
 
   alumnos = alumnado; 
 
-  seleccionado (index) { 
-    this.MovimientoAlumnosService.seleccionados.push(this.alumnos[index]); 
+  seleccionado (item) { 
+    this.MovimientoAlumnosService.sumandoGenteAlgrupo(item); 
   } 
 } 

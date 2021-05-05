@@ -11,13 +11,32 @@ export class MovimientoAlumnosService {
 
   constructor() { }
   
-  sumandoGenteAlgrupo () {
-   this.paraAgregar = this.seleccionados; 
+  sumandoGenteAlgrupo (item) {
+   this.seleccionados.push(item);  
   }; 
 
-  guardarndoElNuevoGrupo () {
-    this.grupoGenerado.push(this.paraAgregar); 
-    this.paraAgregar = []; 
+  mostrarLosSeleccionados () { 
+    if (this.seleccionados !== []) { 
+      let seleccion = this.seleccionados
+      this.seleccionados = [];
+      return seleccion;
+    } 
+    else { 
+      console.log("no hay alumnos para agregar") 
+    }; 
+  }; 
+
+  limpiarSeleccionados () { 
+    this.seleccionados = []; 
+  } 
+
+  quitarUnAlumno (i) { 
+    this.seleccionados.splice(i, 1); 
+    return this.seleccionados; 
+  }
+
+  guardarndoElNuevoGrupo (lista) {
+    this.grupoGenerado.push(lista); 
   }; 
 
 

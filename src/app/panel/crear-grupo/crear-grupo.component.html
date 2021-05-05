@@ -6,12 +6,13 @@
 <div #ingresados> 
     <div>
         <button (click)="agregarAlumno()"> Agregar --> </button> <br>
-        <button (click)="quitarAlumno()"> <-- Quitar </button>
+        
     </div> 
     <div>
         <label *ngFor="let item of listaParaGrupo, index as i">
             <h4>{{item.first_name}}</h4> 
-            <h6>{{item.last_name}}</h6>
+            <h6>{{item.last_name}}</h6> 
+            <button (click)="quitarAlumno(i)"> <-- Quitar </button>
         </label> 
         <br>
         <button (click)="limpiarGrupo()"> Resetear </button> 
