@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
+
 export class MovimientoAlumnosService {
 
   seleccionados: Array<any> = []; 
@@ -17,9 +18,9 @@ export class MovimientoAlumnosService {
 
   mostrarLosSeleccionados () { 
     if (this.seleccionados !== []) { 
-      let seleccion = this.seleccionados
-      this.seleccionados = [];
-      return seleccion;
+      let seleccion = this.seleccionados 
+      this.seleccionados = []; 
+      return seleccion; 
     } 
     else { 
       console.log("no hay alumnos para agregar") 

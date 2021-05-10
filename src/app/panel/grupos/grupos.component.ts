@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.service';
 
 @Component({
@@ -6,7 +6,9 @@ import { MovimientoAlumnosService } from 'src/app/services/movimiento-alumnos.se
   templateUrl: './grupos.component.html',
   styleUrls: ['./grupos.component.css']
 })
-export class GruposComponent implements OnInit { 
+export class GruposComponent { 
+
+  constructor( public MovimientoAlumnosService: MovimientoAlumnosService ) { }; 
 
   losGrupos: Array<any> = []; 
   
@@ -19,10 +21,4 @@ export class GruposComponent implements OnInit {
     this.losGrupos= this.MovimientoAlumnosService.grupoGenerado; 
     console.log(this.losGrupos);
   }; 
-
-  constructor( public MovimientoAlumnosService: MovimientoAlumnosService ) { }; 
-
-  ngOnInit(): void {
-  }; 
-
 }
