@@ -1,1 +1,20 @@
-<p>login works!</p>
+<h4> Login </h4> 
+<h5>Usuario Actual: {{tipoUsuario}}</h5>
+
+<div>
+    <h5>Seleccione Tipo de Usuario: </h5> 
+    <button (click)="ingresarAdmin()"> Admin </button> 
+    <br>
+    <button (click)="ingresarUser()"> Registrado </button> 
+    <br>
+</div>
+
+<div>
+    <button routerLink = "/pagina1" > Pagina 1 </button> 
+    <br> 
+    <button routerLink = "/pagina2" > Pagina 2 </button> 
+    <br> 
+    <button routerLink = "/pagina3" > Pagina 3 </button> 
+    <br> 
+    <button routerLink = "/admin"> Admin </button>
+</div>

@@ -11,6 +11,7 @@ import { Pagina2Component } from './intranet/pagina2/pagina2.component';
 import { Pagina3Component } from './intranet/pagina3/pagina3.component';
 import { HeaderComponent } from './public/header/header.component';
 import { FooterComponent } from './public/footer/footer.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './public/footer/footer.component';
     Pagina2Component,
     Pagina3Component,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

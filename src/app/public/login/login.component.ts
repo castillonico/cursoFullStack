@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogueoService } from 'src/app/logueo.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( private logueo: LogueoService ) { } 
+  tipoUsuario= "Primera Visita"; 
+
+  ingresarAdmin () { 
+    this.logueo.toggleAdmin(); 
+  } 
+
+  ingresarUser () { 
+    this.tipoUsuario = "Usuario"; 
+    this.logueo.toggleUser(); 
+  } 
 
   ngOnInit(): void {
   }
