@@ -7,8 +7,6 @@ import { PanelComponent } from './panel/panel.component';
 import { ListaAlumnosComponent } from './panel/lista-alumnos/lista-alumnos.component';
 import { CrearGrupoComponent } from './panel/crear-grupo/crear-grupo.component';
 import { GruposComponent } from './panel/grupos/grupos.component';
-import { UnAlumnoComponent } from './panel/lista-alumnos/un-alumno/un-alumno.component';
-import { UnGrupoComponent } from './panel/grupos/un-grupo/un-grupo.component';
 
 @NgModule({
   declarations: [
@@ -16,9 +14,7 @@ import { UnGrupoComponent } from './panel/grupos/un-grupo/un-grupo.component';
     PanelComponent,
     ListaAlumnosComponent,
     CrearGrupoComponent,
-    GruposComponent,
-    UnAlumnoComponent,
-    UnGrupoComponent
+    GruposComponent
   ],
   imports: [
     BrowserModule,
